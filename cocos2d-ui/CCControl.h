@@ -79,22 +79,22 @@ typedef NS_ENUM(NSUInteger, CCControlState)
 /// -----------------------------------------------------------------------
 
 /** Sets or retrieves the current state of the control. It's often easier to use the enabled, highlighted and selected properties to indirectly set or read this property. This property is stored as a bit-mask. */
-@property (nonatomic,assign) CCControlState state;
+@property (nonatomic) CCControlState state;
 
 /** Determines if the control is currently enabled. */
-@property (nonatomic,assign) BOOL enabled;
+@property (nonatomic,getter=isEnabled) BOOL enabled;
 
 /** Determines if the control is currently selected. E.g. this is used by toggle buttons to handle the on state. */
-@property (nonatomic,assign) BOOL selected;
+@property (nonatomic,getter=isSelected) BOOL selected;
 
 /** Determines if the control is currently highlighted. E.g. this corresponds to the down state of a button */
-@property (nonatomic,assign) BOOL highlighted;
+@property (nonatomic,getter=isHighlighted) BOOL highlighted;
 
 /** True if the control continously should generate events when it's value is changed. E.g. this can be used by slider controls. */
-@property (nonatomic,assign) BOOL continuous;
+@property (nonatomic,getter=isContinuous) BOOL continuous;
 
 /** True if the control is currently tracking touches or mouse events. That is, if the user has touched down in the component but not lifted his finger (the actual touch may be outside the component). */
-@property (nonatomic,readonly) BOOL tracking;
+@property (nonatomic,readonly,getter=isTracking) BOOL tracking;
 
 /** True if the control currently has a touch or a mouse event within its bounds. */
 @property (nonatomic,readonly) BOOL touchInside;
